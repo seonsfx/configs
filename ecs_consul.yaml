@@ -21,7 +21,7 @@ monitors:
   - type: statsd
     listenPort: 8125
     extraDimensions:
-      envoy_source: consul
+      plugin: consul
     converters:
     - pattern: "consul.{mesh}.{service}.cluster.{}.{action}"
       metricName: "{action}"
