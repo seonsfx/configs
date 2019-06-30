@@ -20,6 +20,8 @@ monitors:
   - {"#from": "/etc/signalfx/monitors/*.yaml", flatten: true, optional: true}
   - type: statsd
     listenPort: 8125
+    extraDimensions:
+      envoy_source: consul
     converters:
     - pattern: "consul.{mesh}.{service}.cluster.{}.{action}"
       metricName: "{action}"
